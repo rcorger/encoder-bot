@@ -8,8 +8,6 @@ import requests
 
 intents = discord.Intents.all()
 
-cwd_of_users = {}
-
 with open("./config.json") as f:
     conf = json.loads(f.read())
 
