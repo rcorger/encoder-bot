@@ -27,7 +27,7 @@ async def encode(ctx: Context):
 
     encoding_msg = ' '.join(ctx.message.content.split(' ')[1::]).strip()
     if encoding_msg == "":
-        return await ctx.reply("You must provide a message to encode into the message!")
+        return await ctx.reply("You must provide a message to encode into the image!")
     
     try:
         attachment_url = ctx.message.attachments[0].url
@@ -67,4 +67,4 @@ async def decode(ctx: Context):
         
     os.remove("./uploadedfile.png")
 
-client.run(conf["TOKEN"])
+client.run(conf["TOKEN"], log_handler=None) # no handler cause it looks shitty.
